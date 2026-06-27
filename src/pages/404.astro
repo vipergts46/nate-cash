@@ -1,0 +1,29 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="Lost" description="404 — this page wandered off.">
+  <section class="mx-auto max-w-2xl px-6 pt-24 pb-32 text-center">
+    <!-- PipBoy-inspired graphic -->
+    <div class="mx-auto mb-10 flex h-32 w-32 items-center justify-center rounded-full border-2 border-[color:var(--color-accent)] bg-[color:var(--color-ink)]" aria-hidden="true">
+      <span class="text-5xl text-[color:var(--color-accent)]" style="font-family: var(--font-display); font-weight: 200;">404</span>
+    </div>
+
+    <p class="display-eyebrow mb-4">// LOST WANDERER</p>
+    <h1 class="text-4xl md:text-5xl">Wonder &amp; wander.</h1>
+    <p class="mt-6 text-lg leading-relaxed text-[color:var(--color-muted)]">
+      This page wandered off the map. Could be it was never here. Could be it moved when nobody was looking.
+    </p>
+    <p class="mt-2 text-sm text-[color:var(--color-muted)] italic">
+      Wonder &amp; wander — not scared &amp; lost.
+    </p>
+
+    <div class="mt-10 flex flex-wrap justify-center gap-4">
+      <a href="/" class="rounded-full border border-[color:var(--color-ink)]/30 px-5 py-2 text-sm no-underline hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)] dark:border-[color:var(--color-bg)]/30">
+        ← Back to base camp
+      </a>
+      <a href="/macropilot" class="rounded-full border border-[color:var(--color-ink)]/30 px-5 py-2 text-sm no-underline hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)] dark:border-[color:var(--color-bg)]/30">
+        See MacroPilot →
+      </a>
+    </div>
+  </section>
+</Base>

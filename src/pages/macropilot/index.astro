@@ -1,0 +1,93 @@
+---
+import Base from "../../layouts/Base.astro";
+
+const principles = [
+  {
+    title: "Protein first",
+    body: "Macros are computed protein-first because that's how every credentialed sports nutritionist actually does it — not internet folklore.",
+  },
+  {
+    title: "Age-aware",
+    body: "Protein needs scale with age, not just bodyweight. Most apps ignore this. We don't.",
+  },
+  {
+    title: "Sustainable rate",
+    body: "Loss is capped at 0.5–1 lb/week. Faster is just water and muscle. We aim for the change you keep.",
+  },
+  {
+    title: "Real food, real recipes",
+    body: "Third-party recipe links keep instructions where they belong — with their authors. We respect their IP.",
+  },
+];
+---
+<Base
+  title="MacroPilot"
+  description="A macro-tracking app built on real nutrition science. Protein-first, age-aware, sustainable. iOS &amp; Android."
+>
+  <!-- Hero -->
+  <section class="mx-auto max-w-6xl px-6 pt-16 pb-16">
+    <p class="display-eyebrow mb-4">// MACROPILOT</p>
+    <h1 class="text-5xl md:text-7xl tracking-[var(--tracking-wide-display)]">
+      MACROPILOT
+    </h1>
+    <p class="mt-6 max-w-2xl text-xl leading-relaxed">
+      Macro tracking that actually works. Built protein-first on real nutrition science, not internet folklore. iOS &amp; Android.
+    </p>
+
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      <a href="#" class="rounded-xl border border-[color:var(--color-ink)] bg-[color:var(--color-ink)] px-6 py-3 text-sm no-underline text-[color:var(--color-bg)] hover:bg-[color:var(--color-accent)] hover:border-[color:var(--color-accent)] dark:border-[color:var(--color-bg)] dark:bg-[color:var(--color-bg)] dark:text-[color:var(--color-ink)]">
+        App Store →
+      </a>
+      <a href="#" class="rounded-xl border border-[color:var(--color-ink)] bg-[color:var(--color-ink)] px-6 py-3 text-sm no-underline text-[color:var(--color-bg)] hover:bg-[color:var(--color-accent)] hover:border-[color:var(--color-accent)] dark:border-[color:var(--color-bg)] dark:bg-[color:var(--color-bg)] dark:text-[color:var(--color-ink)]">
+        Google Play →
+      </a>
+      <span class="text-sm text-[color:var(--color-muted)]">In store testing — public launch soon.</span>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="mx-auto max-w-6xl px-6 pb-20">
+    <p class="display-eyebrow mb-8">// HOW IT THINKS</p>
+    <div class="grid gap-6 md:grid-cols-2">
+      {principles.map((p) => (
+        <div class="rounded-xl border border-[color:var(--color-ink)]/10 p-6 dark:border-[color:var(--color-bg)]/10">
+          <h3 class="text-xl text-[color:var(--color-secondary)]">{p.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-[color:var(--color-muted)]">{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Methodology note -->
+  <section class="mx-auto max-w-3xl px-6 pb-20">
+    <div class="rounded-2xl border-l-4 border-[color:var(--color-accent)] bg-[color:var(--color-secondary)]/5 p-8 dark:bg-[color:var(--color-primary)]/10">
+      <p class="display-eyebrow mb-3">// METHODOLOGY</p>
+      <p class="text-base leading-relaxed">
+        MacroPilot's macro logic was developed alongside a credentialed sports nutritionist.
+        Protein targets scale with age. Fat sits between 20% and 30% of calories — not lower,
+        not higher. Carbs absorb the rest. Loss caps at 0.5–1 lb/week so you keep the muscle,
+        not just the scale weight.
+      </p>
+    </div>
+  </section>
+
+  <!-- Privacy + support -->
+  <section class="mx-auto max-w-6xl px-6 pb-24">
+    <div class="grid gap-4 md:grid-cols-2">
+      <a href="/macropilot/privacy" class="flex items-center justify-between rounded-xl border border-[color:var(--color-ink)]/15 px-6 py-5 no-underline hover:border-[color:var(--color-accent)] dark:border-[color:var(--color-bg)]/15">
+        <div>
+          <p class="display-eyebrow !text-[color:var(--color-secondary)] mb-1">// PRIVACY</p>
+          <p>What we collect, what we don't.</p>
+        </div>
+        <span class="text-[color:var(--color-accent)]">→</span>
+      </a>
+      <a href="/macropilot/support" class="flex items-center justify-between rounded-xl border border-[color:var(--color-ink)]/15 px-6 py-5 no-underline hover:border-[color:var(--color-accent)] dark:border-[color:var(--color-bg)]/15">
+        <div>
+          <p class="display-eyebrow !text-[color:var(--color-secondary)] mb-1">// SUPPORT</p>
+          <p>FAQ + a human to talk to.</p>
+        </div>
+        <span class="text-[color:var(--color-accent)]">→</span>
+      </a>
+    </div>
+  </section>
+</Base>

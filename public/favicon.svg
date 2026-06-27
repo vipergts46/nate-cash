@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="30" fill="#2B2B2B"/>
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#D5602B" stroke-width="3"/>
+  <circle cx="50" cy="14" r="5" fill="#D5602B"/>
+  <text x="32" y="40" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-weight="300" font-size="16" fill="#F7FFF7" letter-spacing="2">NC</text>
+</svg>

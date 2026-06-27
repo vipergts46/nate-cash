@@ -1,0 +1,102 @@
+---
+import Base from "../layouts/Base.astro";
+
+const projects = [
+  {
+    title: "MacroPilot",
+    blurb: "Macro-tracking app grounded in real nutrition science. In store testing.",
+    href: "/macropilot",
+    tag: "Building",
+  },
+  {
+    title: "CMMC Practice @ Cyberleaf",
+    blurb: "Leading CMMC audits and building out the services practice starting July 2026.",
+    href: null,
+    tag: "Next chapter",
+  },
+  {
+    title: "1984 Irwin 43 Mk I",
+    blurb: "Restoring a 41-year-old offshore sailboat. Long list. Slow progress. Worth it.",
+    href: null,
+    tag: "Off the clock",
+  },
+];
+---
+<Base
+  title="Nate Cash"
+  description="Cybersecurity leader, Marine veteran, lifelong tinkerer. Personal site of Nate Cash."
+>
+  <!-- Hero -->
+  <section class="mx-auto max-w-6xl px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+    <p class="display-eyebrow mb-6">// BRAND VISION v02 // PERSONAL</p>
+    <h1 class="text-5xl tracking-[var(--tracking-wide-display)] md:text-7xl">
+      NATE&nbsp;CASH
+    </h1>
+    <p class="mt-8 max-w-2xl text-lg leading-relaxed md:text-xl">
+      Cybersecurity leader. Marine veteran. Lifelong tinkerer.
+      Currently leading services and information security at
+      <span class="text-[color:var(--color-secondary)] font-medium">RedSeal</span>;
+      moving into CMMC audit leadership at
+      <span class="text-[color:var(--color-secondary)] font-medium">Cyberleaf</span>
+      in July 2026. Building
+      <a href="/macropilot" class="text-[color:var(--color-accent)] font-medium">MacroPilot</a>
+      on the side. Rides motorcycles, sails old boats.
+    </p>
+    <div class="mt-10 flex flex-wrap items-center gap-5 text-sm">
+      <a href="/about" class="rounded-full border border-[color:var(--color-ink)]/30 px-5 py-2 no-underline hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)] dark:border-[color:var(--color-bg)]/30">
+        About →
+      </a>
+      <a href="/contact" class="rounded-full border border-[color:var(--color-ink)]/30 px-5 py-2 no-underline hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)] dark:border-[color:var(--color-bg)]/30">
+        Get in touch
+      </a>
+    </div>
+  </section>
+
+  <!-- MacroPilot feature -->
+  <section class="mx-auto max-w-6xl px-6 pb-20">
+    <a href="/macropilot" class="group block no-underline">
+      <div class="relative overflow-hidden rounded-2xl border border-[color:var(--color-ink)]/15 bg-[color:var(--color-secondary)]/5 p-8 md:p-12 transition hover:border-[color:var(--color-accent)] dark:border-[color:var(--color-bg)]/15 dark:bg-[color:var(--color-primary)]/10">
+        <div class="grid gap-8 md:grid-cols-[1.5fr_1fr] md:items-center">
+          <div>
+            <p class="display-eyebrow mb-4">// FEATURED PROJECT</p>
+            <h2 class="text-3xl md:text-4xl text-[color:var(--color-ink)] dark:text-[color:var(--color-bg)]">
+              MacroPilot
+            </h2>
+            <p class="mt-4 max-w-prose text-base md:text-lg leading-relaxed">
+              A macro-tracking app built on real nutrition science, not internet folklore.
+              Protein-first, age-aware, sustainable rate of loss. iOS &amp; Android, in store testing.
+            </p>
+            <span class="mt-6 inline-block text-[color:var(--color-accent)] group-hover:underline">
+              See the app →
+            </span>
+          </div>
+          <div class="hidden md:flex justify-end">
+            <div class="relative h-44 w-44 rounded-full border-2 border-[color:var(--color-accent)] bg-[color:var(--color-ink)] flex items-center justify-center">
+              <span class="text-5xl tracking-wider text-[color:var(--color-bg)]" style="font-family: var(--font-display);">MP</span>
+              <span class="absolute -right-2 -top-2 inline-block h-5 w-5 rounded-full bg-[color:var(--color-accent)]"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <!-- Projects strip -->
+  <section class="mx-auto max-w-6xl px-6 pb-24">
+    <p class="display-eyebrow mb-8">// ELSEWHERE</p>
+    <div class="grid gap-6 md:grid-cols-3">
+      {projects.map((p) => (
+        <div class="rounded-xl border border-[color:var(--color-ink)]/10 p-6 transition hover:border-[color:var(--color-primary)] dark:border-[color:var(--color-bg)]/10">
+          <p class="display-eyebrow mb-3" style="color: var(--color-secondary);">// {p.tag}</p>
+          <h3 class="text-xl">{p.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-[color:var(--color-muted)]">
+            {p.blurb}
+          </p>
+          {p.href && (
+            <a href={p.href} class="mt-4 inline-block text-sm">Read more →</a>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

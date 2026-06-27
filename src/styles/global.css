@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #f7fff7;
+  --color-ink: #2b2b2b;
+  --color-primary: #69a2b0;
+  --color-secondary: #4b5320;
+  --color-accent: #d5602b;
+  --color-muted: #6b7068;
+
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --tracking-wide-display: 0.18em;
+}
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  html {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color 150ms ease;
+  }
+  a:hover {
+    color: var(--color-accent);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html {
+      background: var(--color-ink);
+      color: var(--color-bg);
+    }
+    a {
+      color: #8fc4d2;
+    }
+    a:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+@utility display-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide-display);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+@utility prose-narrow {
+  max-width: 65ch;
+  line-height: 1.7;
+}

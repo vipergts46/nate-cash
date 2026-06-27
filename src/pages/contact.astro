@@ -1,0 +1,34 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="Contact" description="Get in touch with Nate Cash.">
+  <section class="mx-auto max-w-2xl px-6 pt-16 pb-24">
+    <p class="display-eyebrow mb-4">// CONTACT</p>
+    <h1 class="text-4xl md:text-5xl">Say hello.</h1>
+    <p class="mt-6 text-lg leading-relaxed text-[color:var(--color-muted)]">
+      Best path is email. LinkedIn works too. I check both. Not on social media beyond that — by design.
+    </p>
+
+    <div class="mt-10 space-y-4">
+      <a href="mailto:me@nate.cash" class="flex items-center justify-between rounded-xl border border-[color:var(--color-ink)]/15 px-6 py-4 no-underline hover:border-[color:var(--color-accent)] dark:border-[color:var(--color-bg)]/15">
+        <div>
+          <p class="display-eyebrow !text-[color:var(--color-secondary)] mb-1">// EMAIL</p>
+          <p class="text-lg" style="font-family: var(--font-display);">me@nate.cash</p>
+        </div>
+        <span class="text-[color:var(--color-accent)]">→</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/nate-cash/" rel="me noopener" target="_blank" class="flex items-center justify-between rounded-xl border border-[color:var(--color-ink)]/15 px-6 py-4 no-underline hover:border-[color:var(--color-accent)] dark:border-[color:var(--color-bg)]/15">
+        <div>
+          <p class="display-eyebrow !text-[color:var(--color-secondary)] mb-1">// LINKEDIN</p>
+          <p class="text-lg" style="font-family: var(--font-display);">linkedin.com/in/nate-cash</p>
+        </div>
+        <span class="text-[color:var(--color-accent)]">→</span>
+      </a>
+    </div>
+
+    <p class="mt-12 text-sm text-[color:var(--color-muted)] italic">
+      "I trust this. I feel secure."
+    </p>
+  </section>
+</Base>

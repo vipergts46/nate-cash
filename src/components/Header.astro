@@ -1,0 +1,37 @@
+---
+interface Props {
+  pathname: string;
+}
+const { pathname } = Astro.props;
+
+const nav = [
+  { href: "/about", label: "About" },
+  { href: "/macropilot", label: "MacroPilot" },
+  { href: "/contact", label: "Contact" },
+];
+
+const isActive = (href: string) =>
+  pathname === href || (href !== "/" && pathname.startsWith(href));
+---
+<header class="border-b border-[color:var(--color-ink)]/10">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+    <a href="/" class="display-eyebrow !text-[color:var(--color-ink)] !text-sm dark:!text-[color:var(--color-bg)] no-underline">
+      NATE CASH
+    </a>
+    <nav class="flex items-center gap-7 text-sm">
+      {nav.map(({ href, label }) => (
+        <a
+          href={href}
+          class:list={[
+            "no-underline tracking-wide",
+            isActive(href)
+              ? "text-[color:var(--color-accent)]"
+              : "text-[color:var(--color-ink)] dark:text-[color:var(--color-bg)] hover:text-[color:var(--color-accent)]",
+          ]}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
