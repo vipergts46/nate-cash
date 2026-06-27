@@ -1,0 +1,102 @@
+---
+import Base from "../layouts/Base.astro";
+
+const services = [
+  {
+    title: "vCISO",
+    body: "Fractional security leadership for organizations that need executive-level cyber judgment without a full-time hire. Board reporting, program strategy, risk acceptance calls.",
+  },
+  {
+    title: "Security architecture",
+    body: "Network and security architecture reviews and designs. Twenty years of doing this across critical infrastructure, finance, manufacturing, industrial control systems, academia, and government.",
+  },
+  {
+    title: "Vulnerability management",
+    body: "Cutting the noise from your scanners down to what actually matters. Prioritization frameworks, patch program design, and the awkward conversations with engineering that have to happen.",
+  },
+  {
+    title: "Penetration testing &amp; assessment",
+    body: "Targeted technical assessments — network, application, and configuration. GIAC GPEN, with a bias toward findings you can actually act on.",
+  },
+];
+
+const principles = [
+  "Plain English. No fear-selling, no jargon walls.",
+  "I tell you what I'd do if it were my company.",
+  "Small engagements OK. Sometimes a half-day on the phone is the right answer.",
+  "If I'm not the right person, I'll say so and point you at someone who is.",
+];
+---
+<Base
+  title="Consulting"
+  description="Independent cybersecurity advisory — vCISO, security architecture, vulnerability management, assessments. Reach out about an engagement."
+>
+  <!-- Hero -->
+  <section class="mx-auto max-w-3xl px-6 pt-16 pb-12">
+    <p class="display-eyebrow mb-4">// CONSULTING // AIutomate LLC</p>
+    <h1 class="text-4xl md:text-5xl">Work with me.</h1>
+    <p class="mt-6 text-lg leading-relaxed">
+      Independent cybersecurity advisory, operating as <span class="text-[color:var(--color-secondary)] font-medium">AIutomate&nbsp;LLC</span>. Two decades across critical infrastructure, financial institutions, manufacturing, industrial control systems, academia, and government. CISSP, GIAC GPEN, CCNP, MBA.
+    </p>
+    <p class="mt-4 text-base leading-relaxed text-[color:var(--color-muted)]">
+      Pragmatic, blunt, and built on actually shipping the work. Small engagements welcome.
+    </p>
+  </section>
+
+  <!-- Services -->
+  <section class="mx-auto max-w-6xl px-6 pb-16">
+    <p class="display-eyebrow mb-8">// WHAT I DO</p>
+    <div class="grid gap-6 md:grid-cols-2">
+      {services.map((s) => (
+        <div class="rounded-xl border border-[color:var(--color-ink)]/10 p-6 dark:border-[color:var(--color-bg)]/10">
+          <h3 class="text-xl text-[color:var(--color-secondary)]" set:html={s.title}></h3>
+          <p class="mt-3 text-sm leading-relaxed text-[color:var(--color-muted)]" set:html={s.body}></p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- How I work -->
+  <section class="mx-auto max-w-3xl px-6 pb-16">
+    <p class="display-eyebrow mb-6">// HOW I WORK</p>
+    <ul class="space-y-3">
+      {principles.map((p) => (
+        <li class="flex gap-3 text-base leading-relaxed">
+          <span class="text-[color:var(--color-accent)] mt-1">⌁</span>
+          <span>{p}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- CTA -->
+  <section class="mx-auto max-w-3xl px-6 pb-12">
+    <div class="rounded-2xl border-l-4 border-[color:var(--color-accent)] bg-[color:var(--color-secondary)]/5 p-8 dark:bg-[color:var(--color-primary)]/10">
+      <p class="display-eyebrow mb-3">// START A CONVERSATION</p>
+      <p class="text-base leading-relaxed">
+        Best path is email. Tell me what you're working on, what's stuck, and any constraints (timeline, budget, regulated industry). I'll come back with whether I'm the right fit and what a first step looks like.
+      </p>
+      <a href="mailto:me@nate.cash?subject=Consulting%20inquiry%20%E2%80%94%20AIutomate" class="mt-6 inline-flex items-center gap-3 rounded-xl border border-[color:var(--color-ink)] bg-[color:var(--color-ink)] px-6 py-3 text-sm no-underline text-[color:var(--color-bg)] hover:bg-[color:var(--color-accent)] hover:border-[color:var(--color-accent)] dark:border-[color:var(--color-bg)] dark:bg-[color:var(--color-bg)] dark:text-[color:var(--color-ink)]">
+        Email me@nate.cash →
+      </a>
+    </div>
+  </section>
+
+  <!-- Entity mark -->
+  <section class="mx-auto max-w-3xl px-6 pb-24">
+    <div class="flex items-center gap-4 border-t border-[color:var(--color-ink)]/10 pt-8 dark:border-[color:var(--color-bg)]/10">
+      <img
+        src="/aiutomate/icon.png"
+        alt="AIutomate LLC"
+        width="56"
+        height="56"
+        class="h-14 w-14 rounded-xl shadow-sm shadow-[color:var(--color-ink)]/20"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="text-sm leading-relaxed text-[color:var(--color-muted)]">
+        Engagements operate under <span class="text-[color:var(--color-ink)] dark:text-[color:var(--color-bg)] font-medium">AIutomate&nbsp;LLC</span> — Nate's holding company for independent advisory and product work.
+      </div>
+    </div>
+  </section>
+</Base>

@@ -73,7 +73,7 @@
   text-transform: uppercase;
   letter-spacing: var(--tracking-wide-display);
   font-size: 0.75rem;
-  color: var(--color-muted);
+  color: var(--color-primary);
 }
 
 @utility prose-narrow {

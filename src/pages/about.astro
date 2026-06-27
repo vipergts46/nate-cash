@@ -3,15 +3,67 @@ import Base from "../layouts/Base.astro";
 
 const certs = ["CCNA", "CCNP", "GIAC GPEN", "CISSP"];
 const arc = [
+  { label: "Origin", note: "Computer clubs, tinkerers, and electronics wonder from a young age. Anything with screws came apart on the kitchen table. Curiosity about what's under the hood — long before it had a job title." },
   { label: "USMC", note: "Voice, internet, and secure internet over microwave equipment." },
   { label: "A.A.S.", note: "Computer Information Science." },
   { label: "Network Engineer", note: "Cisco voice, routing, and switching for critical infrastructure and enterprises." },
   { label: "B.A.S.", note: "Cybersecurity." },
   { label: "M.B.A.", note: "Because the business side matters too." },
-  { label: "Consulting", note: "Two decades across critical infrastructure, finance, manufacturing, ICS, academia, and government." },
-  { label: "RedSeal", note: "Senior Director — Information Security &amp; Global Professional Services." },
-  { label: "Cyberleaf", note: "July 2026 — leading CMMC audits and growing the services practice." },
+  { label: "Consulting", note: "Two decades across critical infrastructure, finance, manufacturing, industrial control systems, academia, and government — as a consultant, an internal practitioner, and a services leader." },
 ];
+
+const projects = [
+  {
+    title: "MacroPilot",
+    blurb: "Macro-tracking app built on real nutrition science. Native iOS + Android. In store testing.",
+    status: "Building",
+    href: "/macropilot",
+  },
+  {
+    title: "1984 Irwin 43 Mk I",
+    blurb: "Restoring a 41-year-old offshore sailboat. Long punch list, slow progress, worth every hour.",
+    status: "Restoring",
+  },
+  {
+    title: "Arduino + Raspberry Pi tinkering",
+    blurb: "Always something on the bench. Custom circuits, microcontroller automations, single-board-computer experiments — designed, soldered, iterated, and refined until they actually solve the problem in front of me. Bespoke work, hands-on, never quite finished.",
+    status: "Bespoke",
+  },
+  {
+    title: "Working PipBoy",
+    blurb: "Functional Fallout PipBoy build. Yes, it works. Yes, I wear it. No, I won't apologize.",
+    status: "Done",
+  },
+  {
+    title: "3D-printed Simpsons TV",
+    blurb: "Working miniature of the chunky Simpsons couch-gag TV. Printed shell, embedded screen, looping playback. Fits in your hand and absolutely earns its desk space.",
+    status: "Done",
+  },
+  {
+    title: "Indiana Jones kit",
+    blurb: "Full authentic loadout — fedora, jacket, bullwhip. Curated, not costumed.",
+    status: "Done",
+  },
+  {
+    title: "Microphone USB-B mini repair",
+    blurb: "Soldered in a new USB-B mini port. Saved a perfectly good mic from the e-waste bin.",
+    status: "Done",
+  },
+  {
+    title: "Backup GPS resurrection",
+    blurb: "Cleaned the battery holder, resoldered the power leads. Back from the dead.",
+    status: "Done",
+  },
+];
+
+const statusClass: Record<string, string> = {
+  Building: "border-[color:var(--color-accent)] text-[color:var(--color-accent)]",
+  Restoring: "border-[color:var(--color-secondary)] text-[color:var(--color-secondary)]",
+  Bespoke: "border-[color:var(--color-primary)] text-[color:var(--color-primary)]",
+  "In progress": "border-[color:var(--color-primary)] text-[color:var(--color-primary)]",
+  Done: "border-[color:var(--color-ink)]/30 text-[color:var(--color-muted)]",
+  Planned: "border-dashed border-[color:var(--color-muted)] text-[color:var(--color-muted)]",
+};
 ---
 <Base title="About" description="Long-form bio: career, certs, and what Nate's up to off the clock.">
   <section class="mx-auto max-w-3xl px-6 pt-16 pb-20">
@@ -21,13 +73,13 @@ const arc = [
 
     <div class="prose-narrow mt-10 space-y-6 text-base md:text-lg">
       <p>
-        Nate has been tinkering with computers since he was a kid — the kind of curiosity that turns into a career when you start finding vulnerabilities for fun and getting paid to find them later. After high school he joined the United States Marine Corps, running voice, internet, and secure internet over microwave equipment. From there: an A.A.S. in Computer Information Science, a run as a network engineer wiring up Cisco voice, routing, and switching for critical infrastructure and enterprises, and eventually back to his first love — information security.
+        Nate has been tinkering with computers since he was a kid — the kind of curiosity that turns into a career when you start finding vulnerabilities for fun then getting paid to find them later. After high school he joined the United States Marine Corps, running voice, internet, and secure internet over microwave equipment. From there: an A.A.S. in Computer Information Science, a run as a network engineer wiring up Cisco voice, routing, and switching for critical infrastructure and enterprises, and eventually back to his first love — information security.
       </p>
       <p>
         Along the way he picked up a B.A.S. in cybersecurity, an M.B.A., and certifications including CCNA, CCNP, GIAC GPEN, and CISSP.
       </p>
       <p>
-        Today Nate leads global professional services and information security at <span class="text-[color:var(--color-secondary)] font-medium">RedSeal</span>. In July 2026 he steps into CMMC audit leadership at <span class="text-[color:var(--color-secondary)] font-medium">Cyberleaf</span>. Across two decades he has designed, installed, and tested security solutions for critical infrastructure, financial institutions, manufacturing, ICS environments, academia, and government. He's also building <a href="/macropilot" class="font-medium">MacroPilot</a>, a macro-tracking app grounded in real nutrition science.
+        Across two decades Nate has designed, installed, and tested security solutions for <span class="text-[color:var(--color-secondary)] font-medium">critical infrastructure</span>, financial institutions, manufacturing, industrial control systems, academia, and government — as a consultant, an internal practitioner, and a services leader. He's also building <a href="/macropilot" class="font-medium">MacroPilot</a>, a macro-tracking app grounded in real nutrition science.
       </p>
       <p>
         Off the clock, Nate rides motorcycles, sails his 1984 Irwin 43, brews beer, and shares the adventure of life with his wife <span class="font-medium">Dr. Kelly Cash</span>.
@@ -59,15 +111,36 @@ const arc = [
       </ol>
     </div>
 
+    <!-- Projects & builds -->
+    <div class="mt-14">
+      <p class="display-eyebrow mb-6">// PROJECTS &amp; BUILDS</p>
+      <ul class="space-y-5">
+        {projects.map((p) => (
+          <li class="grid gap-2 md:grid-cols-[1fr_auto] md:items-baseline md:gap-6 border-b border-[color:var(--color-ink)]/10 pb-5 dark:border-[color:var(--color-bg)]/10 last:border-0">
+            <div>
+              <h3 class="text-lg" style="font-family: var(--font-display);">
+                {p.href ? <a href={p.href} class="no-underline hover:text-[color:var(--color-accent)]">{p.title}</a> : p.title}
+              </h3>
+              <p class="mt-1 text-sm leading-relaxed text-[color:var(--color-muted)]">{p.blurb}</p>
+            </div>
+            <span class:list={["inline-block self-start whitespace-nowrap rounded-full border px-3 py-1 text-xs tracking-wider uppercase", statusClass[p.status]]}>
+              {p.status}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
     <!-- Off the clock -->
     <div class="mt-14">
       <p class="display-eyebrow mb-4">// OFF THE CLOCK</p>
       <ul class="space-y-2 text-sm leading-relaxed">
         <li><span class="text-[color:var(--color-accent)]">⌁</span> Motorcycles. Long roads, foggy mornings, no agenda.</li>
-        <li><span class="text-[color:var(--color-accent)]">⌁</span> Sailing the 1984 Irwin 43.</li>
-        <li><span class="text-[color:var(--color-accent)]">⌁</span> Soldering iron + curiosity = working PipBoy and a resurrected backup GPS.</li>
-        <li><span class="text-[color:var(--color-accent)]">⌁</span> Indiana Jones, Fallout, Zelda. Cosplay incoming.</li>
+        <li><span class="text-[color:var(--color-accent)]">⌁</span> Pilot. Logging hours when the weather and the schedule line up.</li>
+        <li><span class="text-[color:var(--color-accent)]">⌁</span> Backpacking. Mountains, low-light starts, the part of the trail where the map gets vague.</li>
         <li><span class="text-[color:var(--color-accent)]">⌁</span> Brewing beer. Drinking it. Sharing it.</li>
+        <li><span class="text-[color:var(--color-accent)]">⌁</span> Indiana Jones, Fallout, Zelda — games, kit, and adjacent rabbit holes.</li>
+        <li><span class="text-[color:var(--color-accent)]">⌁</span> Adventure-seeking by default. If it doesn't make a good story, why bother.</li>
       </ul>
     </div>
   </section>
