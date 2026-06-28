@@ -51,13 +51,13 @@ All in `src/styles/global.css`. Edit there to change palette/fonts globally.
 | `--color-bg`        | `#F7FFF7` | Page background                       |
 | `--color-ink`       | `#2B2B2B` | Body text, headings                   |
 | `--color-primary`   | `#69A2B0` | Links, primary accents                |
-| `--color-secondary` | `#4B5320` | Olive — section dividers, eyebrows    |
+| `--color-secondary` | `#7E8B4A` | Olive (lightened sage) — section dividers, badges, callouts |
 | `--color-accent`    | `#D5602B` | Hover, CTA punch, MacroPilot highlight |
 | `--color-muted`     | `#6B7068` | Secondary text                        |
 
 Dark mode honors `prefers-color-scheme` and inverts bg/ink.
 
-> The mood board's orange swatch label was a typo (`#4B5320` reused). `#D5602B` is the current stand-in. Update here if Nate supplies the correct hex.
+> Olive was lightened from the mood-board original (`#4B5320` → `#7E8B4A`) for better readability on the dark surface. Orange (`#D5602B`) is a stand-in for the orange the mood board mislabeled as `#4B5320`.
 
 ## Editing content
 

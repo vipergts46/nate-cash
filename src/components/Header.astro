@@ -15,11 +15,11 @@ const isActive = (href: string) =>
   pathname === href || (href !== "/" && pathname.startsWith(href));
 ---
 <header class="border-b border-[color:var(--color-ink)]/10">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-    <a href="/" class="display-eyebrow !text-[color:var(--color-ink)] !text-sm dark:!text-[color:var(--color-bg)] no-underline">
+  <div class="mx-auto flex max-w-6xl flex-col items-start gap-3 px-6 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+    <a href="/" class="display-eyebrow !text-[color:var(--color-ink)] !text-sm dark:!text-[color:var(--color-bg)] no-underline whitespace-nowrap">
       NATE CASH
     </a>
-    <nav class="flex items-center gap-7 text-sm">
+    <nav class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm sm:gap-7">
       {nav.map(({ href, label }) => (
         <a
           href={href}
